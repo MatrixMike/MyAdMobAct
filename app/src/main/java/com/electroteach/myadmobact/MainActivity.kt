@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.google.android.gms.ads.MobileAds
 
 // Remove the line below after defining your own ad unit ID.
 private const val TOAST_TEXT = "Test ads are being shown. " +
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        MobileAds.initialize(this) {}
         // Create the next level button, which tries to show an interstitial when clicked.
         nextLevelButton = findViewById(R.id.next_level_button)
         nextLevelButton.isEnabled = false
